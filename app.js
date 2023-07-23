@@ -100,6 +100,7 @@ function displayMovieDetails(movieDetails) {
         localStorage.setItem(`rating_${imdbID}`, rating);
         localStorage.setItem(`comment_${imdbID}`, comment);
         alert('Rating and comment saved!');
+        detailsContainer.innerHTML = '';
     });
 
     detailsSection.appendChild(saveButton);
