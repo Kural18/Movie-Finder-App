@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <div class="box" id="heading">
+            <h1>Movie Lister</h1>
+            <div class="Search_bar">
+                <input type="text" id="searchInput" placeholder="Search Movie Names">
+                <button id="searchButton">Search</button>
+            </div>
+        </div>
+
+        <div class="box">
+            <div id="contentHolder"></div>
+            <div id="paginationButtons">
+                <button id="prevButton">Previous</button>
+                <button id="nextButton">Next</button>
+            </div>
+        </div>
+
+        <div id="detailsContainer"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
