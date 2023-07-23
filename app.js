@@ -78,21 +78,17 @@ function displayMovieDetails(movieDetails) {
     });
 
     detailsSection.innerHTML = `
-        <div class="containerDS">
         <div class="child_CDS firstCDS">
         <h2>${movieDetails.Title}</h2>
         <p><strong>Year:</strong> ${movieDetails.Year}</p>
         <p><strong>Rated:</strong> ${movieDetails.Rated}</p>
         <p><strong>Plot:</strong> ${movieDetails.Plot}</p>
         <p><strong>Language</strong> ${movieDetails.Language}</p>
-        <p><strong>IMDB Rating:</strong> ${movieDetails.imdbRating}</p></div>
-        <div class="child_CDS secondCDS">
+        <p><strong>IMDB Rating:</strong> ${movieDetails.imdbRating}</p>
         <label for="ratingInput">Your Rating:(/5)</label>
         <input type="number" id="ratingInput" min="1" max="10" value="${storedRating || ''}">
         <label for="commentInput">Your Comment:</label>
-        <textarea id="commentInput" rows="3">${storedComment || ''}</textarea>
-        </div>
-        </div>
+        <textarea id="commentInput" rows="3">${storedComment || ''}</textarea></div>
     `;
 
     const saveButton = document.createElement('button');
@@ -120,7 +116,7 @@ searchButton.addEventListener('click', async function() {
     if (result.Search) {
         await displayData(searchText, 1);
     } else {
-        alert('Too many data! Please try again!');
+        alert('Too many data! Please type more!');
         console.log("Too many data! Add more");
     }
 });
@@ -145,11 +141,8 @@ nextButton.addEventListener('click', async function() {
     }
   });
 
-
-  document.addEventListener('DOMContentLoaded',async function() {
-    const defaultText = 'har';
-    const result = await fetchMovieData(defaultText, 1);
-    if(result.Search){
-        await displayData(defaultText,1);
-    }
-  })
+  document.addEventListener('DOMContentLoaded', function() {
+    searchInput.value = 'friends';
+    searchButton.click();
+  });
+  

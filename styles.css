@@ -15,7 +15,7 @@ html {
 
 .box {
     width: 750px;
-    margin: 50px 250px;
+    margin: 50px auto;
     background: #1D1F21;
     border-radius: 5px;
     box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
@@ -26,24 +26,25 @@ html {
 .Search_bar {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     width: 500px;
     margin: 20px auto;
     padding: 10px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);;
-  }
+}
   
-  .Search_bar input[type="text"] {
+.Search_bar input[type="text"] {
     flex: 1;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
     font-size: 14px;
-  }
-  
-  .Search_bar button {
+}
+
+.Search_bar button {
     padding: 8px 16px;
     background-color: #007bff;
     color: #fff;
@@ -52,101 +53,111 @@ html {
     cursor: pointer;
     font-size: 14px;
     margin-left: 10px;
-  }
-  
-  .Search_bar button:hover {
-    background-color: #0056b3;
-  }
+}
 
-  #contentHolder {
+.Search_bar button:hover {
+    background-color: #0056b3;
+}
+
+#contentHolder {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
+}
 
-  .itemElement {
+.itemElement {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
     background-color: darkslategrey;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 15px;
-    cursor: pointer;
-    position: relative;
+    align-items: center;
+    text-align: center;
+    height: 311px;
+}
+
+
+.itemElement > img {
+    width: 250px;
     height: 200px;
-    width: 300px;
-  }
+}
 
-
-  .itemElement > h2 {
-    flex-grow: 15;
-  }
-
-  .itemElement > img {
-    width: 100px;
-    height: 100px;
-    flex-grow: 1;
-  }
-
-  #heading {
+#heading {
     background-color: #1D1F21;
     text-align: center;
-  }
+}
 
-  body {
+body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     color: white;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     color: white;
-  }
+}
 
-  .detailSection {
-    position: fixed;
-    top: 244px;
-    left: 497px;
-    width: 500px;
-    padding: 10px;
+.detailSection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: cadetblue;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    color: black;
-  }
+    color: #FFF;
+    padding: 20px;
+    z-index: 9999;
+    border-radius: 10px;
+}
 
-  .closeButton {
+.closeButton {
     display: block;
     margin-top: 10px;
-  }
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    color: #FFF;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 16px;
+}
 
-  .containerDS {
+.containerDS {
     display: flex;
     flex-direction: row;
-  }
+}
 
-  .child_CDS {
+.child_CDS {
     display: flex;
     flex-direction: column;
+}
+.child_CDS > input[type="number"],textarea {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #777;
+    background-color: #777;
+    color: #FFF;
   }
-  .firstCDS > * {
+
+
+.firstCDS > * {
     margin: 5px 0;
-  }
+}
 
-  .secondCDS > * {
-    margin-bottom: 20px;
-  }
-
-  .child_CDS > h2 {
+.child_CDS > h2 {
     color: black;
-  }
+}
 
-  .detailSection > button {
+.detailSection > button {
     background-color: rgb(132, 140, 149);
     font-size: 16px;
     padding: 10px 20px;
@@ -154,8 +165,27 @@ html {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .detailSection > button:hover {
+}
+
+.detailSection > button:hover {
     background-color: #B0C4DE;
-  }
+}
+
+#paginationButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    margin-bottom: 30px;
+}
+
+#paginationButtons > * {
+    background-color: rgb(132, 140, 149);
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 15px;
+}
+
