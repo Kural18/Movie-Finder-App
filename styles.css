@@ -60,21 +60,24 @@ html {
 
   #contentHolder {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .itemElement {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column-reverse;
     align-items: center;
-    background-color: cyan;
+    background-color: darkslategrey;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 15px;
     cursor: pointer;
     position: relative;
+    height: 200px;
+    width: 300px;
   }
 
 
@@ -111,9 +114,10 @@ html {
     left: 497px;
     width: 500px;
     padding: 10px;
-    background-color: grey;
+    background-color: cadetblue;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 999;
+    color: black;
   }
 
   .closeButton {
@@ -130,7 +134,28 @@ html {
     display: flex;
     flex-direction: column;
   }
+  .firstCDS > * {
+    margin: 5px 0;
+  }
 
   .secondCDS > * {
     margin-bottom: 20px;
+  }
+
+  .child_CDS > h2 {
+    color: black;
+  }
+
+  .detailSection > button {
+    background-color: rgb(132, 140, 149);
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .detailSection > button:hover {
+    background-color: #B0C4DE;
   }

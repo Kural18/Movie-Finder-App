@@ -79,7 +79,7 @@ function displayMovieDetails(movieDetails) {
 
     detailsSection.innerHTML = `
         <div class="containerDS">
-        <div class="child_CDS">
+        <div class="child_CDS firstCDS">
         <h2>${movieDetails.Title}</h2>
         <p><strong>Year:</strong> ${movieDetails.Year}</p>
         <p><strong>Rated:</strong> ${movieDetails.Rated}</p>
@@ -87,7 +87,7 @@ function displayMovieDetails(movieDetails) {
         <p><strong>Language</strong> ${movieDetails.Language}</p>
         <p><strong>IMDB Rating:</strong> ${movieDetails.imdbRating}</p></div>
         <div class="child_CDS secondCDS">
-        <label for="ratingInput">Your Rating:</label>
+        <label for="ratingInput">Your Rating:(/5)</label>
         <input type="number" id="ratingInput" min="1" max="10" value="${storedRating || ''}">
         <label for="commentInput">Your Comment:</label>
         <textarea id="commentInput" rows="3">${storedComment || ''}</textarea>
@@ -136,11 +136,20 @@ nextButton.addEventListener('click', async function() {
     const searchText = searchInput.value.toLowerCase().trim();
     console.log(pageNumber + 1);
     const result = await fetchMovieData(searchText, pageNumber + 1);
-    console.log(result);
+    //console.log(result);
     if (result.Search) {
       await displayData(searchText, pageNumber + 1);
     } else {
-        `   `
+        alert('No more data found');
         console.log("No more data found")
     }
   });
+
+
+  document.addEventListener('DOMContentLoaded',async function() {
+    const defaultText = 'har';
+    const result = await fetchMovieData(defaultText, 1);
+    if(result.Search){
+        await displayData(defaultText,1);
+    }
+  })
